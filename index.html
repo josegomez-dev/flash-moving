@@ -181,8 +181,8 @@
                     </h1>
 
                     <div>
-                        <a href="#popup1">
-                            <button>Ver Video...</button>
+                        <a id="watch-video-btn" href="#popup1">
+                            <button>Watch Video...</button>
                         </a>
                     </div>
 
@@ -521,4 +521,9 @@ reliability, professionalism, and top-notch customer service.
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            document.getElementById('watch-video-btn').click();
+        });
+    </script>
 </body>
