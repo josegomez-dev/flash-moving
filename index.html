@@ -31,6 +31,80 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="#">
 
+    <style>
+        .box {
+            width: 40%;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.2);
+            padding: 35px;
+            border: 2px solid #fff;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup {
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        .popup .close:hover {
+            color: #06D85F;
+        }
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+
+        .custom-title-positioning {
+            margin-top: -0px;
+        } 
+
+        @media screen and (max-width: 700px){
+            .box{
+                width: 70%;
+            }
+            .popup{
+                width: 70%;
+            }
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -49,6 +123,22 @@
     ================================================== -->
     <header class="s-header">
 
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <img src="./android-chrome-192x192.png" width="50px" alt="">
+                <h3 class="custom-title-positioning">Welcome to <a href="#">Flash Moving Delivery and Logistics</a> – Your Trusted Moving Partner in Orlando Florida!</h3>
+                <div class="content">
+                    <video width="100%" height="auto" controls="controls">
+                        <source src="./promvideo.mp4" type="video/mp4" />
+                    </video>
+                    <a style="float: right;" href="#">
+                        <button>Continue ></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
         <div class="header-logo">
             <a class="site-logo" href="index.html">
                 <img src="images/logo-hor-white.png" alt="Homepage">
@@ -62,21 +152,16 @@
 
     </header> <!-- end s-header -->
 
-
     <!-- intro
     ================================================== -->
     <section id="intro" class="s-intro s-intro--slides">
-
+            
         <div class="intro-slider">
             <div class="intro-slider-img" style="background-image: url(images/slides/no-1-packers-movers.png);"></div>
             <div class="intro-slider-img bg-opacity-40" style="background-image: url(images/slides/slide-02.jpg);"></div>
             <div class="intro-slider-img" style="background-image: url(images/slides/what-is-a-logistics-company-1536x1536.jpg);">
             </div>
         </div>
-
-        <div class="grid-overlay">
-            <div></div>
-        </div> 
 
         <div class="row intro-content">
 
@@ -94,6 +179,12 @@
                     working on a super <br>
                     awesome website.
                     </h1>
+
+                    <div>
+                        <a href="#popup1">
+                            <button>Ver Video...</button>
+                        </a>
+                    </div>
 
                 </div> <!-- end intro-content__text -->
 
